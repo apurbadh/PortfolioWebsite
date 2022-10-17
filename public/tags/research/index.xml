@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>research on Apurba</title>
+    <link>https://hugo-profile.netlify.app/tags/research/</link>
+    <description>Recent content in research on Apurba</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Apr 2021 23:29:21 +0530</lastBuildDate><atom:link href="https://hugo-profile.netlify.app/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quantum Computing: Part 1</title>
+      <link>https://hugo-profile.netlify.app/blogs/quantum/</link>
+      <pubDate>Sat, 03 Apr 2021 23:29:21 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/quantum/</guid>
+      <description>Abstract Quantum computing is a field that combines concepts from classical information theory, computer science, and quantum physics. Following Richard Feynman&amp;rsquo;s finding that certain quantum mechanical effects cannot be efficiently replicated on a computer, it was hypothesized that computation, in general, could be more efficient if these quantum effects were exploited. When Peter Shor described a polynomial-time quantum technique for factoring integers, this speculation was confirmed. Since then time, the field of Quantum Computing has been in the mainstream and has been widely discussed.</description>
+    </item>
+    
+  </channel>
+</rss>

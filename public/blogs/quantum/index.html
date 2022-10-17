@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" href=/fav.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-DWJJVE27WD', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<meta property="og:title" content="Quantum Computing: Part 1" />
+<meta property="og:description" content="Abstract Quantum computing is a field that combines concepts from classical information theory, computer science, and quantum physics. Following Richard Feynman&rsquo;s finding that certain quantum mechanical effects cannot be efficiently replicated on a computer, it was hypothesized that computation, in general, could be more efficient if these quantum effects were exploited. When Peter Shor described a polynomial-time quantum technique for factoring integers, this speculation was confirmed. Since then time, the field of Quantum Computing has been in the mainstream and has been widely discussed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hugo-profile.netlify.app/blogs/quantum/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2021-04-03T23:29:21+05:30" />
+<meta property="article:modified_time" content="2021-04-03T23:29:21+05:30" /><meta property="og:site_name" content="Apurba" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Quantum Computing: Part 1"/>
+<meta name="twitter:description" content="Abstract Quantum computing is a field that combines concepts from classical information theory, computer science, and quantum physics. Following Richard Feynman&rsquo;s finding that certain quantum mechanical effects cannot be efficiently replicated on a computer, it was hypothesized that computation, in general, could be more efficient if these quantum effects were exploited. When Peter Shor described a polynomial-time quantum technique for factoring integers, this speculation was confirmed. Since then time, the field of Quantum Computing has been in the mainstream and has been widely discussed."/>
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+
+
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+</style>
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-5/all-5.15.4.js"></script>
+
+  <title>
+Quantum Computing: Part 1 | Apurba
+
+  </title>
+</head>
+
+<body class="light" onload="loading()">
+  
+  
+
+
+
+<header>
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                Apurba
+                
+            </a>
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#about" aria-label="about">About</a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#experience"
+                            aria-label="experience">Experience</a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#education"
+                            aria-label="education">Education</a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#projects"
+                            aria-label="projects">Projects</a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#achievements"
+                            aria-label="achievements">Achievements</a>
+                    </li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/blogs" title="Research">
+                            
+                            Research
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+                
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Quantum Computing: Part 1</h1>
+            <div class="text-center">
+              Apurba Adhikari 
+              <small>|</small>
+              Apr 3, 2021
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid" src="/images/quantum.jpg" alt="Quantum Computing: Part 1">
+          </div>
+          
+          <article class="page-content  p-2">
+          <h2 id="abstract">Abstract</h2>
+<p>Quantum computing is a field that combines concepts from classical information theory, computer science, and quantum physics. Following Richard Feynman&rsquo;s finding that certain quantum mechanical effects cannot be efficiently replicated on a computer, it was hypothesized that computation, in general, could be more efficient if these quantum effects were exploited. When Peter Shor described a polynomial-time quantum technique for factoring integers, this speculation was confirmed. Since then time, the field of Quantum Computing has been in the mainstream and has been widely discussed. Due to that, there are also a lot of misconceptions about it, for example, Quantum Computers are not another generation of Supercomputers like many people think them to be, it also is not suitable for a normal person who just wants to use computers, for normal tasks, classical computers are way better than their Quantum counterparts. Quantum computers are meant for deeply specialized fields like machine learning, cryptography, and calculations related to Quantum Physics. I am trying to give a short introduction to Quantum Computing to people who are unfamiliar with this concept in a short and sweet way.</p>
+<p>Keywords : <em>Quantum Computers, Information Theory, Quantum Physics</em></p>
+<h2 id="11-background">1.1 Background</h2>
+<p>Richard Feynman ignited the quantum computing revolution. He addressed the following problem at MIT in 1981: traditional computers cannot efficiently model the evolution of quantum systems. As a result, he suggested a fundamental model for a quantum computer capable of doing such simulations. He outlined the possibility of massively outpacing traditional computers with this. However, it took more than a decade for the Shor algorithm, a unique method, to shift people&rsquo;s minds about quantum computing. Peter Shor created a method in 1994 that allows quantum computers to factor huge integers tenfold faster than the best classical algorithm on regular machines. Factoring 300-digit figures take millions of years in the latter. The Shor algorithm has the potential to break many of today&rsquo;s cryptosystems in theory. Quantum computers&rsquo; ability to break cryptosystems in hours rather than millions of years sparked interest in quantum computing and its applications. Twenty-two years later, in 2017, IBM announced the first cost-effective quantum computer, bringing the competition to a new level.</p>
+<h2 id="12-objective">1.2 Objective</h2>
+<p>The term Quantum Computing is unfamiliar to a lot of people even in Physics, Mathematics, and Computing fields. I think that is because of less availability of resources and a very mathematical approach to the available resources. The main objective of this paper is to provide a general resource for people to read and understand what is Quantum Computing with less mathematical background. I am writing this paper in a very easy and understandable way so that even normal people can understand it. That being said, I will not include many deep concepts in Quantum Computing. The objective of this paper is not to make a person professional in Quantum Computing but to give general information about Quantum Computing and how it works.</p>
+<h2 id="13-theory">1.3 THEORY</h2>
+<p>A bit is a concept used in traditional computing to describe how computers represent information. Quantum computing uses quantum bits, also known as qubits, as a memory unit. A two-state quantum-mechanical system makes up of qubits. The power of quantum computers grows exponentially with more qubits. A quantum-mechanical system is one that can exist in any two quantum states that can be distinguished. This is because of the phenomenon called Quantum Entanglement and Quantum Superpositioning. It&rsquo;s normal to be confused by phrases like superposition and entanglement; we don&rsquo;t see these phenomena in our daily lives, so I will be introducing them in later sections. Like normal computers have gates like NOR gate, OR gate, AND gate, etc, Quantum computers have Quantum Gates to decide what to do based on the input. Similarly, Quantum Computers have Quantum Circuits instead of normal circuits found on normal computers.</p>
+<h2 id="chapter-2--some-notations">CHAPTER 2 : SOME NOTATIONS</h2>
+<h3 id="21-hilbert-space">2.1 Hilbert Space</h3>
+<p>A Hilbert space is a complete inner product space with respect to the norm defined by the inner product in mathematics. Hilbert spaces are useful for clarifying and generalizing the concept of Fourier expansion and certain linear transformations such as the Fourier transform. Although many basic features of quantum mechanics can be understood without going into detail about Hilbert spaces, Hilbert spaces are critical in the mathematical formulation of quantum mechanics. In functional analysis, Hilbert spaces are investigated.</p>
+<p>The components of an abstract Hilbert space are sometimes referred to as &ldquo;vectors.&rdquo; They are typically sequences of complex numbers or functions in applications. In quantum mechanics, for example, a physical system is described by a complex Hilbert space that contains &ldquo;wave functions&rdquo; that represent the system&rsquo;s possible states. For more information, see the mathematical formulation of quantum mechanics. The Hilbert space of plane waves and bound states, which is commonly used in quantum mechanics, is formally known as the rigged Hilbert space.</p>
+<h3 id="22-bra-ket-notation">2.2 Bra-Ket Notation</h3>
+<p>In paper related Quantum Computing or Quantum Physics, the appearance of symbols like shown below is quite common. So, what are they and why are they used ?</p>
+<p>|0|1⟩ <em>or</em> |ψ⟩</p>
+<p>As it turns out, they are nothing but vectors, but not the normal vectors, unlike normal vectors they are not in a space but a vector in an abstract mathematical thing called Hilbert-space which we discussed previously. And another difference between them and vectors would be that the coefficients in Quantum Mechanics are not real numbers, but are complex numbers. [2]</p>
+<h3 id="22-operators">2.2 Operators</h3>
+<p>An operator acts on a function to produce another function, it is denoted by “^” symbol
+It is like how a function acts on a variable like We often (but not always) indicate that an object is an operator by placing a &lsquo;hat&rsquo; over it</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#11-background">1.1 Background</a></li>
+    <li><a href="#12-objective">1.2 Objective</a></li>
+    <li><a href="#13-theory">1.3 THEORY</a></li>
+    <li><a href="#chapter-2--some-notations">CHAPTER 2 : SOME NOTATIONS</a>
+      <ul>
+        <li><a href="#21-hilbert-space">2.1 Hilbert Space</a></li>
+        <li><a href="#22-bra-ket-notation">2.2 Bra-Ket Notation</a></li>
+        <li><a href="#22-operators">2.2 Operators</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/research" target="_blank">research</a></li>
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/quantum" target="_blank">quantum</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Quantum%20Computing%3a%20Part%201&url=https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fquantum%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Quantum%20Computing%3a%20Part%201: https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fquantum%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="mailto:?subject=Quantum%20Computing%3a%20Part%201&amp;body=Check out this site https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fquantum%2f">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gurusabarish" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+  </div><footer>
+    <div class="container py-3" id="recent-posts">
+    
+    <div class="h3 text-center text-secondary py-3">Recent posts</div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/quantum/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Quantum Computing: Part 1">Quantum Computing: Part 1</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Abstract Quantum computing is a field that combines concepts from classical information theory, computer science, and quantum physics. Following Richard Feynman&rsquo;s finding that certain quantum mechanical effects cannot be efficiently replicated on a computer, it was hypothesized that …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">April 3, 2021</span>
+                    <a href="/blogs/quantum/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/deltaos/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Delta OS">Delta OS</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>This documentation helps you learn about Delta OS and how to run it on your PC.
+About Delta OS is an Arch based distribution created for developers and people intrested in Arch Linux. It is created by the Delta OS team which is led by Mr. Apurba Adhikari. Due to Arch Linux having good amount of …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">April 3, 2021</span>
+                    <a href="/blogs/deltaos/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div><div class="text-center pt-2">
+    
+
+    
+
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            <div class="pb-2">
+                <a href="https://hugo-profile.netlify.app" title="Apurba">
+                    <img alt="Footer logo" src=""
+                        height="40px" width="40px">
+                </a>
+            </div>
+            &copy; 2022  All Rights Reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div></footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    }
+</script>
+
+
+
+<script>
+    let loadingIcons;
+
+    function loading() {
+        myVar = setTimeout(showPage, 100);
+    }
+
+    function showPage() {
+        try{
+            document.getElementById("loading-icons").style.display = "block";
+        } catch(err) {}
+    }
+</script></body>
+
+</html>
