@@ -1,0 +1,207 @@
+baseURL: "https://hugo-profile.netlify.app"
+languageCode: "en-us"
+title: "Apurba"
+theme: hugo-profile
+
+Paginate: 3
+disqusShortname: gurusabarish
+googleAnalytics: G-DWJJVE27WD
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: research
+      name: Research
+      title: Research
+      url: /blogs
+      weight: 1
+
+    
+
+params:
+  title: "Apurba"
+  description: Computer Science Practicer
+ 
+  useBootstrapCDN: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    disableThemeToggle: true
+    defaultTheme: "light" # dark
+
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Apurba."
+    subtitle: "Researching, inovating and building one at a time"
+    content: "A passionate computer science practitioner and an individual religion, science and mathematics researcher"
+    image: /images/hero.jpg
+    button:
+      enable: true
+      name: "Resume"
+      url: "#"
+      download: true
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/apurbadh
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/apurba-adhikari-3539461aa/
+
+  # About
+  about:
+    enable: true
+    title: "About Me"
+    image: "/images/unnamed.jpg"
+    content: |-
+      I am a software developer with a strong intrest in the field of Mathematics and Physics. I have worked with many web technologies as well as Artifical Intelligence, Blockchain and Cyber Security.
+
+      I am currenty researching and developing new projects to inovate and bring change in the world. 
+    skills:
+      enable: true
+      title: "Here are a few technologies I've been working with recently:"
+      items:
+        - "React"
+        - "Laravel"
+        - "Django"
+        - "Tensorflow"
+        - "Ethereum"
+        - "Low Level"
+        - "Cyber Security"
+        - "Vedic Astrology"
+        - "Quantum Computing"
+
+  # Experience
+  experience:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - job: "Researcher and Developer"
+        company: "Aptinoc"
+        date: "Jan 2022 - present"
+        content: "I am currently working as a researcher and developer in Aptinoc Private Limited where I research and build various projects"
+
+      - job: "Laravel Developer"
+        company: "Neon"
+        companyUrl: "http://www.neon.com.np"
+        date: "April 2020 - April 2021"
+        info:
+          enable: true
+          content: I worked as a software developer for more than one year in Amazon.
+        content: |
+          Worked at a company named Neon Marketplace as a Laravel Developer to create a full fleged ecommerce with the team.
+
+          - Lead backend developer for a product.
+          - Created a full stack ecommerce website with co-operating with the frontend team
+
+      - job: "Web Developing Head"
+        company: "YSC"
+        companyUrl: "https://recast.ysc-nepal.org"
+        date: "Jan 2020 - Aug 2020"
+        info:
+          enable: false
+        featuredLink:
+          enable: true
+          url: "https://recast.ysc-nepal.org"
+        content: |
+          Worked in Young Scientist Community to create a website related to AI and robotics.
+          
+          - Created a fully functional website about AI and robotics
+          - Wrote multiple articles and documentation about Python and AI
+          - Taught many tech enthusiast about AI in Nepal
+
+  
+  # Education
+  education:
+    enable: true
+    # title: "Custom Name"
+    # index: true
+    items:
+      - title: "Plus Two Science"
+        school:
+          name: "Deerwalk Sifal School"
+          url: "https://deerwalk.edu.np/sifalschool/"
+        date: "2020 - 2022"
+        content: |-
+          Extracurricular Activities
+            - Learned video editing, Python, Javascript and Laravel 
+            - Won different compitations like speech and presentation 
+            - Awarded with Best Student of Physics and Mathematics
+            - Awarded with Best President for being president of STEM Club
+      - title: "Deep Learning Specialization"
+        school:
+          name: "Coursera"
+          url: "https://www.coursera.org/specializations/deep-learning"
+        date: "2020 - 2021"
+        content: |-
+          A course designed by Andrew Ng and published in coursera. I learned about what deep learning is, how it works. The following thing was taught
+            - What is neural network and how it works ?
+            - Create and train deep learning models using tensorflow 
+
+      - title: "Google IT Support Professional Certificate"
+        content: |-
+          Learned basic It management skills and to fix and handle many technical problems. I learned about following things
+          - Git and Linux
+          - Networking and many protocals
+          - Python programming
+        school:
+          name: "Coursera"
+          url: "https://www.coursera.org/professional-certificates/google-it-support?"
+        featuredLink:
+          enable: true
+          url: "https://www.coursera.org/professional-certificates/google-it-support?"
+
+  # Achievements
+  achievements:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - title: Top 1% in TryHackMe
+        content: Rank Top 1% in the world in a website called TryHack
+        url: https://tryhackme.com/p/em0
+      - title: KU Hackfeast 2021 Winner
+        content: Developed a website for farmers with AI to detect plant diseases
+      - title: Math Olympiad Top 20
+        content: Ranked in top 20 in Nepal Mathematics Olympiad
+      - title: Nepal Linguistics Olympiad Gold Medalist
+        content: Won Gold Medal on Nepal National Linguistics Olympiad 
+      - title: Blue Coder in CodeForces
+        content: Ranked as an "Lieutenant" in a competative coding website called Code Forces
+        url: https://codeforces.com/blog/entry/126
+      - title: Informatics Olympiad Champion
+        content: Won a competative coding olympiad called Informatics Olympiad
+
+  # projects
+  projects:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - title: Delta OS
+        content: Delta OS is a customisable and easy to use arch-based operating system created by me.
+        image: /images/projects/delta.png
+        featured:
+          name: Link
+          link: https://sourceforge.net/projects/deltaos/
+       
+      - title: Merchant Plus
+        content: A blockchain app made with RFID Card and Arduino which can do blockchain transactions from the RFID Card
+        image: /images/projects/merchant.jpg
+        featured:
+          name: Link
+          link: https://github.com/apurbadh/MerchantPlus
+
+
+      - title: Hand Detector and Automator
+        content: A machine learning model which captures the hand in video, detects it and automates it accordingly
+        image: /images/projects/converter.jpg
+        featured:
+          name: Link
+          link: https://github.com/apurbadh/PersonalVoiceAssistant
+
+
